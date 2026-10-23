@@ -1,5 +1,15 @@
 (function(){
   document.documentElement.classList.add('js');
+  var track=document.querySelector('.track');
+if(track){
+  Array.from(track.children).forEach(function(card){
+    var c=card.cloneNode(true);
+    c.classList.add('clone');
+    c.setAttribute('aria-hidden','true');
+    c.querySelectorAll('a').forEach(function(a){a.tabIndex=-1;});
+    track.appendChild(c);
+  });
+}
   try{document.getElementById('yr').textContent=new Date().getFullYear();}catch(e){}
   document.querySelectorAll('.viz img').forEach(function(img){
     function empty(){img.parentNode.classList.add('is-empty');}

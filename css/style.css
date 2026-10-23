@@ -142,3 +142,42 @@ editing project card themes
 
 .card .label{background:var(--card-accent);color:var(--card-on)}
 .card .ico:not(.off){background:var(--card-accent);color:var(--card-on)}
+
+
+section + section{border-top:var(--bw) solid var(--ink)}
+
+main{counter-reset:sec}
+
+#about h2::before,
+#projects h2::before,
+#skills h2::before{
+  counter-increment:sec;
+  content:"0" counter(sec);
+  display:block;
+  width:fit-content;
+  margin-bottom:12px;
+  padding:4px 10px;
+  font:700 .8rem var(--fd);
+  letter-spacing:.08em;
+  background:var(--lime);
+  color:var(--on-accent);
+  border:2px solid var(--ink);
+}
+
+
+/* 
+editing project card arrange 
+*/
+
+.marquee{overflow:hidden;padding:10px 0 16px}
+.track{display:flex;width:max-content;animation:scroll 40s linear infinite}
+.track .card{width:340px;flex:none;margin-right:28px}
+.marquee:hover .track,
+.marquee:focus-within .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+@media (prefers-reduced-motion:reduce),(hover:none){
+  .marquee{overflow-x:auto}
+  .track{animation:none}
+  .track .clone{display:none}
+}
