@@ -55,11 +55,10 @@ if(form){
 var board=document.getElementById('board'),info=document.getElementById('info');
 if(board&&info){
   var z=10,hideT,sel=null;
-  var iImg=document.getElementById('info-img'),iName=document.getElementById('info-name'),iDesc=document.getElementById('info-desc');
+  var iIco=document.getElementById('info-ico'),iName=document.getElementById('info-name'),iDesc=document.getElementById('info-desc');
 
   function showInfo(el){
-    iImg.src=el.querySelector('img').src;
-    iImg.style.setProperty('--s',el.style.getPropertyValue('--s')||1);
+    iIco.style.backgroundImage='url("'+el.querySelector('img').src+'")';
     iName.textContent=el.dataset.name;
     iDesc.textContent=el.dataset.desc;
     info.classList.add('show');
