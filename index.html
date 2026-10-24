@@ -20,10 +20,16 @@
     <a class="mark" href="#top" aria-label="Khaled Wael, back to top">kw.</a>
     <nav aria-label="Primary">
       <ul>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="play" id="play" type="button" aria-pressed="false" aria-label="Play music">
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+          </button>
+         </li>
       </ul>
     </nav>
   </div>
@@ -34,17 +40,24 @@
   <div class="wrap hero-grid">
     <div>
       <span class="label">AI / Software / Research</span>
-      <h1 id="hero-h">I turn ideas into <span>things that work.</span></h1>
+      <h1 id="hero-h">I turn curiosity&nbsp;into <span>scalable software.</span></h1>
       <p class="intro"></p>
       <div class="btns">
         <a class="btn" href="#projects">See my projects</a>
         <a class="btn alt" href="assets/Khaled_CV.pdf" download="Khaled_CV.pdf">Download my CV</a>
       </div>
     </div>
-    <div class="deco" aria-hidden="true">
-      <div class="blk b1"></div><div class="blk b2"></div><div class="blk b3"></div>
-      <span class="tag t1">fundus → 3D</span><span class="tag t2">rag.search()</span>
-      <span class="q">what if?</span>
+    <div class="board" id="board" role="group" aria-label="Things I use and love. Drag them around.">
+      <button type="button" class="stk" data-name="Claude" data-desc="AI for code" style="--r:-6deg"><img src="assets/images/stickers/claude.svg" alt="Claude" draggable="false"></button>
+      <button type="button" class="stk" data-name="Figma" data-desc="Designing tool" style="--r:5deg"><img src="assets/images/stickers/figma.svg" alt="Figma" draggable="false"></button>
+      <button type="button" class="stk" data-name="VS Code" data-desc="My IDE" style="--r:-4deg"><img src="assets/images/stickers/vs-code.svg" alt="VS Code" draggable="false"></button>
+      <button type="button" class="stk" data-name="Hack Club" data-desc="Programming club" style="--r:7deg"><img src="assets/images/stickers/hack-club.svg" alt="Hack Club" draggable="false"></button>
+      <button type="button" class="stk" data-name="Fayoum STEM School" data-desc="My sweet school" style="--r:4deg;--s:1.2"><img src="assets/images/stickers/fayoum-stem-school.svg" alt="Fayoum STEM School" draggable="false"></button>
+      <button type="button" class="stk" data-name="Anker Q11i" data-desc="My sweet headphones" style="--r:-7deg"><img src="assets/images/stickers/anker-q11i.svg" alt="Anker Q11i headphones" draggable="false"></button>
+      <button type="button" class="stk" data-name="Terminal" data-desc="Where the magic happens" style="--r:6deg"><img src="assets/images/stickers/terminal.svg" alt="Terminal" draggable="false"></button>
+      <button type="button" class="stk" data-name="Heng Balance Lamp" data-desc="Warm light" style="--r:-5deg"><img src="assets/images/stickers/heng-lamp.svg" alt="Heng Balance Lamp" draggable="false"></button>
+      <button type="button" class="stk" data-name="MacBook Air M2" data-desc="Apple MacBook" style="--r:3deg"><img src="assets/images/stickers/macbook-air-m2.svg" alt="MacBook Air M2" draggable="false"></button>
+      <button type="button" class="stk" data-name="Barcelona FC" data-desc="Football team" style="--r:-3deg;--s:1.15"><img src="assets/images/stickers/barcelona-fc.svg" alt="Barcelona FC" draggable="false"></button>
     </div>
   </div>
 </section>
@@ -181,6 +194,26 @@
       <a class="btn dark" href="https://github.com/khaled-dragon" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="btn dark" href="www.linkedin.com/in/khaledwael17" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
+
+        <form class="cform" id="cform" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="604697f6-7e36-40e8-ad2c-8eb09f72eb34">
+      <input type="hidden" name="subject" value="New message from my portfolio">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+
+      <label>Name
+        <input type="text" name="name" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
+      <label>Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+
+      <button class="btn dark" type="submit">Send message</button>
+      <p class="status" id="cform-status" role="status"></p>
+    </form>
+
   </div>
 </section>
 </main>
@@ -191,6 +224,13 @@
     <span>© <span id="yr">2026</span> Khaled Wael</span>
   </div>
 </footer>
+
+<div class="info" id="info" role="status" aria-live="polite">
+  <span class="info-ico"><img id="info-img" src="" alt=""></span>
+  <div><strong id="info-name"></strong><span id="info-desc"></span></div>
+</div>
+
+<audio id="bgm" loop preload="none" src="assets/audio/music.mp3"></audio>
 
 <script src="js/script.js" defer></script>
 </body>
