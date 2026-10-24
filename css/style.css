@@ -226,7 +226,7 @@ styling the hero section's board and the draggable project cards
 .info{position:fixed;left:50%;bottom:20px;z-index:60;display:flex;align-items:center;gap:12px;padding:10px 20px 10px 10px;background:#171717;color:#FFF9ED;border:var(--bw) solid var(--ink);box-shadow:var(--sh);opacity:0;transform:translate(-50%,24px);pointer-events:none;transition:opacity .2s,transform .2s}
 .info.show{opacity:1;transform:translate(-50%,0)}
 .info-ico{flex:none;width:72px;height:72px;display:grid;place-items:center;background:#FFF9ED;overflow:hidden}
-.info-ico img{width:80%;height:80%;object-fit:contain;scale:var(--s,1)}
+.info-ico img{width:58%;height:58%;object-fit:contain;scale:var(--s,1)}
 .info div{display:grid;line-height:1.25}
 .info strong{font:700 1rem var(--fd)}
 .info span{font-size:.85rem;color:#bdb8aa}
